@@ -1,6 +1,6 @@
 {
   "name": "Image Scatter Plot",
-  "organization": "Custom Viz Studio", 
+  "organization": "Custom Viz Studio",
   "description": "Scatter plot visualization with creative images and size scaling for advertising data analysis.",
   "logoUrl": "https://via.placeholder.com/128x128/4285f4/ffffff?text=IMG",
   "organizationUrl": "https://example.com",
@@ -15,54 +15,59 @@
       "iconUrl": "https://via.placeholder.com/64x64/34a853/ffffff?text=SP",
       "resource": {
         "js": "main.js",
-        "css": "style.css",
-        "config": "main.json"
+        "css": "style.css"
       },
       "data": [
         {
-          "id": "creativeId",
-          "label": "Creative ID",
-          "type": "DIMENSION",
-          "options": {
-            "min": 1,
-            "max": 1
-          }
-        },
-        {
-          "id": "imageUrl",
-          "label": "Image URL", 
-          "type": "DIMENSION",
-          "options": {
-            "min": 1,
-            "max": 1
-          }
-        },
-        {
-          "id": "xMetric",
-          "label": "X-Axis Metric",
-          "type": "METRIC",
-          "options": {
-            "min": 1,
-            "max": 1
-          }
-        },
-        {
-          "id": "yMetric", 
-          "label": "Y-Axis Metric",
-          "type": "METRIC",
-          "options": {
-            "min": 1,
-            "max": 1
-          }
-        },
-        {
-          "id": "sizeMetric",
-          "label": "Size Metric",
-          "type": "METRIC",
-          "options": {
-            "min": 0,
-            "max": 1
-          }
+          "id": "DEFAULT",
+          "label": "Default",
+          "elements": [
+            {
+              "id": "creativeId",
+              "label": "Creative ID",
+              "type": "DIMENSION",
+              "options": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "id": "imageUrl",
+              "label": "Image URL",
+              "type": "DIMENSION", 
+              "options": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "id": "xMetric",
+              "label": "X-Axis Metric",
+              "type": "METRIC",
+              "options": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "id": "yMetric",
+              "label": "Y-Axis Metric", 
+              "type": "METRIC",
+              "options": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "id": "sizeMetric",
+              "label": "Size Metric",
+              "type": "METRIC",
+              "options": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
         }
       ],
       "style": [
@@ -73,8 +78,8 @@
           "defaultValue": "CTR (%)"
         },
         {
-          "id": "yLabel", 
-          "label": "Y-axis Label",
+          "id": "yLabel",
+          "label": "Y-axis Label", 
           "type": "TEXTINPUT",
           "defaultValue": "CVR (%)"
         },
@@ -86,8 +91,8 @@
         },
         {
           "id": "maxImageSize",
-          "label": "Maximum Image Size (px)", 
-          "type": "TEXTINPUT",
+          "label": "Maximum Image Size (px)",
+          "type": "TEXTINPUT", 
           "defaultValue": "80"
         },
         {
@@ -98,11 +103,14 @@
         },
         {
           "id": "showTooltips",
-          "label": "Show Tooltips", 
+          "label": "Show Tooltips",
           "type": "CHECKBOX",
           "defaultValue": true
         }
       ]
+    }
+  ]
+}
     }
   ]
 }
