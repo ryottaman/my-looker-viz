@@ -2,17 +2,17 @@
   "name": "Image Scatter Plot",
   "organization": "Custom Viz Studio", 
   "description": "Scatter plot visualization with creative images and size scaling for advertising data analysis.",
-  "logoUrl": "https://via.placeholder.com/128x128/4285f4/ffffff?text=IMG",
-  "organizationUrl": "https://example.com",
-  "supportUrl": "https://example.com/support",
-  "privacyUrl": "https://example.com/privacy",
-  "termsOfServiceUrl": "https://example.com/terms",
+  "logoUrl": "https://anagrams.jp/wp-content/themes/anagrams2023/assets/img/logo.svg",
+  "organizationUrl": "https://anagrams.jp/",
+  "supportUrl": "https://anagrams.jp/contact/",
+  "privacyUrl": "https://anagrams.jp/privacy/",
+  "termsOfServiceUrl": "https://anagrams.jp/privacy/",
   "devMode": true,
   "components": [
     {
       "id": "image_scatter_plot",
       "name": "Image Scatter Plot",
-      "iconUrl": "https://via.placeholder.com/64x64/34a853/ffffff?text=SP",
+      "iconUrl": "https://anagrams.jp/wp-content/themes/anagrams2023/favicon.ico",
       "resource": {
         "js": "main.js",
         "css": "style.css"
