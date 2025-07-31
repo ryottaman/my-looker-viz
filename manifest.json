@@ -1,6 +1,6 @@
 {
   "name": "Image Scatter Plot",
-  "organization": "Custom Viz Studio",
+  "organization": "Custom Viz Studio", 
   "description": "Scatter plot visualization with creative images and size scaling for advertising data analysis.",
   "logoUrl": "https://via.placeholder.com/128x128/4285f4/ffffff?text=IMG",
   "organizationUrl": "https://example.com",
@@ -34,7 +34,7 @@
             {
               "id": "imageUrl",
               "label": "Image URL",
-              "type": "DIMENSION", 
+              "type": "DIMENSION",
               "options": {
                 "min": 1,
                 "max": 1
@@ -51,7 +51,7 @@
             },
             {
               "id": "yMetric",
-              "label": "Y-Axis Metric", 
+              "label": "Y-Axis Metric",
               "type": "METRIC",
               "options": {
                 "min": 1,
@@ -79,7 +79,7 @@
         },
         {
           "id": "yLabel",
-          "label": "Y-axis Label", 
+          "label": "Y-axis Label",
           "type": "TEXTINPUT",
           "defaultValue": "CVR (%)"
         },
@@ -92,7 +92,7 @@
         {
           "id": "maxImageSize",
           "label": "Maximum Image Size (px)",
-          "type": "TEXTINPUT", 
+          "type": "TEXTINPUT",
           "defaultValue": "80"
         },
         {
@@ -108,9 +108,6 @@
           "defaultValue": true
         }
       ]
-    }
-  ]
-}
     }
   ]
 }
