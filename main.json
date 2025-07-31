@@ -1,0 +1,87 @@
+{
+  "data": [
+    {
+      "id": "creativeId",
+      "label": "Creative ID",
+      "type": "DIMENSION",
+      "options": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "id": "imageUrl",
+      "label": "Image URL",
+      "type": "DIMENSION", 
+      "options": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "id": "xMetric",
+      "label": "X-Axis Metric",
+      "type": "METRIC",
+      "options": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "id": "yMetric",
+      "label": "Y-Axis Metric", 
+      "type": "METRIC",
+      "options": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "id": "sizeMetric",
+      "label": "Size Metric",
+      "type": "METRIC",
+      "options": {
+        "min": 0,
+        "max": 1
+      }
+    }
+  ],
+  "style": [
+    {
+      "id": "xLabel",
+      "label": "X-axis Label",
+      "type": "TEXTINPUT",
+      "defaultValue": "CTR (%)"
+    },
+    {
+      "id": "yLabel",
+      "label": "Y-axis Label", 
+      "type": "TEXTINPUT",
+      "defaultValue": "CVR (%)"
+    },
+    {
+      "id": "minImageSize",
+      "label": "Minimum Image Size (px)",
+      "type": "TEXTINPUT",
+      "defaultValue": "20"
+    },
+    {
+      "id": "maxImageSize",
+      "label": "Maximum Image Size (px)",
+      "type": "TEXTINPUT", 
+      "defaultValue": "80"
+    },
+    {
+      "id": "showGridLines",
+      "label": "Show Grid Lines",
+      "type": "CHECKBOX",
+      "defaultValue": true
+    },
+    {
+      "id": "showTooltips",
+      "label": "Show Tooltips",
+      "type": "CHECKBOX",
+      "defaultValue": true
+    }
+  ]
+}

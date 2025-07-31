@@ -1,0 +1,269 @@
+/* ===========================================
+   Image Scatter Plot - Looker Studio Custom Visualization
+   スタイルシート
+   =========================================== */
+
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+/* メインコンテナ */
+#visualization-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* SVG要素 */
+#scatter-plot-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 軸のスタイル */
+.x-axis, .y-axis {
+    font-size: 11px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.x-axis path,
+.y-axis path {
+    stroke: #e0e0e0;
+    stroke-width: 1;
+    fill: none;
+}
+
+.x-axis line,
+.y-axis line {
+    stroke: #f5f5f5;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.x-axis text,
+.y-axis text {
+    fill: #666;
+    font-size: 10px;
+}
+
+/* グリッドライン */
+.grid line {
+    stroke: #e8e8e8;
+    stroke-width: 0.5;
+    stroke-dasharray: 2,2;
+    opacity: 0.7;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+/* 軸ラベル */
+.axis-label {
+    fill: #333;
+    font-size: 12px;
+    font-weight: 600;
+    text-anchor: middle;
+}
+
+.x-axis-label {
+    font-size: 13px;
+}
+
+.y-axis-label {
+    font-size: 13px;
+}
+
+/* クリエイティブ画像 */
+.creative-image {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.creative-image:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* ツールチップ */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 250px;
+    line-height: 1.4;
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 4px;
+}
+
+.tooltip-content {
+    font-size: 11px;
+}
+
+.tooltip-row {
+    margin: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tooltip-label {
+    color: #ccc;
+    margin-right: 8px;
+}
+
+.tooltip-value {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* ローディングインジケーター */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4285f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* エラーメッセージ */
+.error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ea4335;
+}
+
+.error-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.error-text {
+    color: #ea4335;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .axis-label {
+        font-size: 10px;
+    }
+    
+    .tooltip {
+        font-size: 11px;
+        padding: 8px 12px;
+        max-width: 200px;
+    }
+    
+    .creative-image {
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    }
+    
+    .creative-image:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* 4象限の背景色（オプション） */
+.quadrant {
+    fill: rgba(0, 0, 0, 0.02);
+    stroke: rgba(0, 0, 0, 0.1);
+    stroke-width: 1;
+    stroke-dasharray: 5,5;
+}
+
+.quadrant.high-performance {
+    fill: rgba(76, 175, 80, 0.05);
+}
+
+.quadrant.low-performance {
+    fill: rgba(244, 67, 54, 0.05);
+}
+
+/* 画像ロードエラー時のフォールバック */
+.image-placeholder {
+    fill: #f0f0f0;
+    stroke: #ccc;
+    stroke-width: 1;
+}
+
+.image-placeholder-text {
+    fill: #999;
+    font-size: 8px;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+    .creative-image,
+    .tooltip,
+    .loading-spinner {
+        transition: none;
+        animation: none;
+    }
+}

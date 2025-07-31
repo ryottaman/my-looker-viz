@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scatter Plot - Looker Studio Custom Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- D3.js v7 CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Looker Studio Community Visualization Library -->
+    <script src="https://www.gstatic.com/looker-studio/dscc/production/latest/main.js"></script>
+</head>
+<body>
+    <!-- メインコンテナ -->
+    <div id="visualization-container">
+        <!-- SVG要素 - スキャッタープロット用 -->
+        <svg id="scatter-plot-svg"></svg>
+        
+        <!-- ツールチップ用の要素 -->
+        <div id="tooltip" class="tooltip"></div>
+        
+        <!-- ローディングインジケーター -->
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">データを読み込み中...</div>
+        </div>
+        
+        <!-- エラーメッセージ表示用 -->
+        <div id="error-message" class="error-message" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <div class="error-text">データの読み込みに失敗しました</div>
+        </div>
+    </div>
+    
+    <!-- メインのJavaScriptファイル -->
+    <script src="main.js"></script>
+</body>
+</html>
